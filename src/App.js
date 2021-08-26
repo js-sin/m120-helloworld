@@ -1,25 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import {useState} from "react";
 
-function App() {
-  return (
+export default function App() {
+    const [counter, setCounter] = useState(0)
+    function buttonHandler() {
+        console.log("Button was clicked")
+    }
+
+    function counterPlus() {
+       setCounter(counter+1)
+        console.log(counter)
+    }
+
+    return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+       Hello World
+          <button onClick={ buttonHandler }>click me</button>
+          <p>{counter}</p>
+          <button onClick={ counterPlus }>counterPlus</button>
       </header>
     </div>
   );
 }
 
-export default App;
